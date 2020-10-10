@@ -5,6 +5,20 @@
 }
 
 <div class="container">
-    <div class="h1">Блог путешественника</div>
-    <p>Здесь что-то о путешествиях...</p>
+    <div class="h1">Блог мыслителя</div>
+    <p>Здесь что-то о цитатах...</p>
+    @foreach (var post in Model)
+    {
+        <div class="card">
+            <div class="card-header">
+                @post.Title
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>@post.Data</p>
+                    <footer class="blockquote-footer">@post.Author (<cite title="Source Title">@post.Date</cite>)</footer>
+                </blockquote>
+            </div>
+        </div>
+    }
 </div>
